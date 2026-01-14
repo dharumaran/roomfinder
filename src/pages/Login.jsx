@@ -9,12 +9,13 @@ export default function Login() {
     e.preventDefault()
     setLoading(true)
 
-    await supabase.auth.signInWithOtp({
+await supabase.auth.signInWithOtp({
   email,
   options: {
-    emailRedirectTo: window.location.origin
+    emailRedirectTo: "https://roomfinder-f4x4gyx1n-dharinis-projects-3f0db16f.vercel.app"
   }
 })
+
 
 
     setLoading(false)
