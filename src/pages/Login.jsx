@@ -9,9 +9,13 @@ export default function Login() {
     e.preventDefault()
     setLoading(true)
 
-    const { error } = await supabase.auth.signInWithOtp({
-      email,
-    })
+    await supabase.auth.signInWithOtp({
+  email,
+  options: {
+    emailRedirectTo: window.location.origin
+  }
+})
+
 
     setLoading(false)
 
